@@ -1,7 +1,7 @@
-from django.http import HttpResponse, Http404
-from django.shortcuts import get_object_or_404,render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
 
-from .models import Question
+from .models import Question, Choice
 
 
 def index(request):
@@ -24,4 +24,4 @@ def results(request, question_id):
 
 
 def vote(request, question_id):
-    return HttpResponse("you're voting on question %s." % question_id)
+
